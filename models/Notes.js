@@ -4,11 +4,14 @@ const noteSchema = new mongoose.Schema({
   title: String,
   text: String,
   user_id: Schema.Types.ObjectId,
-  completed: Boolean,
+  completed: {
+    type: Boolean,
+    default: false,
+  },
   created_at: {
     type: Date,
     default: Date.now,
-  }, // TimeStamp String
+  },
 });
 
 const Note = mongoose.model('Note', noteSchema);
